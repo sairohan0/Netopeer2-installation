@@ -1,0 +1,11 @@
+version: "3.9" 
+
+services:
+  alpha:
+    image: library_builder:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./sysroots:/opt/sysroots
+    command: ["bash", "/build/scripts/build_all.sh"]
